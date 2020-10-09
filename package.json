@@ -3,11 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
-    "proxy": "http://localhost:5555",
     "scripts": {
-        "server": "json-server --watch data/db.json --port 5555",
+        "server": "json-server -w data/db.json -p 5555",
         "start": "node server",
-        "dev": "concurrently \"npm run server\" \"npm start\""
+        "dev": "concurrently \"npm run server\" \"npm start\"",
+        "heroku": "cocurrently \"npm run server\" \"npm start --proxy=http://localhost:5555\""
     },
     "author": "Shin Maung Maung<ethereal97@gmail.com>",
     "license": "MIT",
