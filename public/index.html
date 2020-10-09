@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Hello World</h1>
+        <section class="stats">
+            <div>
+                <h2>Users (<span id="users-count">0</span>)</h2>
+                <ul id="users"></ul>
+            </div>
+            <div>
+                <h2>Rooms (<span id="rooms-count">0</span>)</h2>
+                <ul id="rooms"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            var el = {
+                users: document.querySelector('#users'),
+                rooms: document.querySelector('#rooms'),
+                total: {
+                    users: document.querySelector('#users-count'),
+                    rooms: document.querySelector('#rooms-count')
+                }
+            };
+
+            fetch('/users').then(res => res.json())
+                .then(users => {
+                    users.forEach(user => {
+                        var li = document.createElement('li');
+                        li.textContent = `${user.name}`;
+                        el.users.appendChild(li);
+                    });
+                    el.total.users.textContent = users.length;
+                })
+
+            fetch('/rooms').then(res => res.json())
+                .then(rooms => {
+                    rooms.forEach(room => {
+                        var li = document.createElement('li');
+                        li.textContent = `${room.name}`;
+                        el.rooms.appendChild(li);
+                    });
+                    el.total.rooms.textContent = rooms.length;
+                })
+        });
+    </script>
+</body>
+
+</html>

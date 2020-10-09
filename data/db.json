@@ -1,4 +1,20 @@
 {
-    "users": [],
-    "rooms": []
+    "users": [{
+            "name": "admin",
+            "id": 1
+        },
+        {
+            "name": "usesr",
+            "id": 2
+        }
+    ],
+    "rooms": [{
+            "name": "ROOM 1",
+            "id": 1
+        },
+        {
+            "name": "ROOM 2",
+            "id": 2
+        }
+    ]
 }

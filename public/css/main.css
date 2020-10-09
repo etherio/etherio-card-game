@@ -1,0 +1,22 @@
+* {
+    box-sizing: content-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 95vw;
+}
+
+section.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
