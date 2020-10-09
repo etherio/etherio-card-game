@@ -7,7 +7,7 @@
         "server": "json-server -w data/db.json -p 5555",
         "start": "node server",
         "dev": "concurrently \"npm run server\" \"npm start\"",
-        "heroku": "cocurrently \"npm run server\" \"npm start --proxy=http://localhost:5555\""
+        "heroku": "concurrently \"npm run server\" \"npm start --proxy=http://localhost:5555\""
     },
     "author": "Shin Maung Maung<ethereal97@gmail.com>",
     "license": "MIT",
