@@ -1,0 +1,10 @@
+{
+    "name": "socket-card-game",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "echo Running"
+    },
+    "license": "MIT",
+    "proxy": "http://localhost:5555"
+}
